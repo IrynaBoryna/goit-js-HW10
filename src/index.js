@@ -1,7 +1,7 @@
 import debounce from 'lodash.debounce';
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import API from './fetchCountries';
+import {fetchCountries} from './fetchCountries';
 
 const DEBOUNCE_DELAY = 1300;
 
@@ -24,9 +24,8 @@ function onSearch (e) {
  
 clearForm();
 
- API.fetchCountries(inputSearch)
+ fetchCountries(inputSearch)
  .then(countriesArray => {
-  console.log(countriesArray);
     if(countriesArray.length > 10) {
     Notify.info("Too many matches found. Please enter a more specific name.");
 

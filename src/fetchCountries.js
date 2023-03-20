@@ -1,7 +1,7 @@
 const url = `https://restcountries.com/v3.1/name/`;
 const queryParams = '?fields=name,capital,population,flags,languages';
 
-function fetchCountries(name) {
+export function fetchCountries(name) {
   if (name.trim() === "") {
     console.log(name);
     return;
@@ -16,4 +16,4 @@ function fetchCountries(name) {
    })
      }
 
-export default {fetchCountries};
+// export function {fetchCountries};
