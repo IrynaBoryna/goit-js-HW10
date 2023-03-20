@@ -20,9 +20,14 @@ refs.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 function onSearch (e) {
  e.preventDefault();
- inputSearch = e.target.value.trim();
- 
-clearForm();
+ inputSearch = e.target.value?.trim();
+
+ if(inputSearch === "") {
+  refs.countryList.innerHTML = "";
+  refs.countryInfoCard.innerHTML= "";
+  return
+ }
+// clearForm();
 
 fetchCountries(inputSearch)
 .then(countriesArray => {
@@ -80,13 +85,13 @@ fetchCountries(inputSearch)
     .join('');
     }
 
-    function clearForm () {
-      if(inputSearch === "") {
-        refs.countryList.innerHTML = "";
-        refs.countryInfoCard.innerHTML= "";
-        return
-       }
-      };  
+    // function clearForm () {
+    //   if(inputSearch === "") {
+    //     refs.countryList.innerHTML = "";
+    //     refs.countryInfoCard.innerHTML= "";
+    //     return
+    //    }
+    //   };  
 
 
       
