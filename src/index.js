@@ -28,7 +28,7 @@ function onSearch (e) {
   refs.countryInfoCard.innerHTML= "";
   return
  }
-// clearForm();
+
 
 fetchCountries(inputSearch)
 .then(countriesArray => {
