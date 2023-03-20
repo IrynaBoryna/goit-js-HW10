@@ -24,27 +24,32 @@ function onSearch (e) {
  
 clearForm();
 
- fetchCountries(inputSearch)
- .then(countriesArray => {
+fetchCountries(inputSearch)
+.then(countriesArray => {
     if(countriesArray.length > 10) {
     Notify.info("Too many matches found. Please enter a more specific name.");
-
+ 
   } 
-  else   if (countriesArray.length === 1) {
-    console.log(countriesArray);
+  else  
+   if (countriesArray.length === 1) {
+    
    const markupCard = countryCard(countriesArray); 
     refs.countryInfoCard.insertAdjacentHTML("beforeend", markupCard);  
  } 
  else {
-  console.log(countriesArray);
+  
     const markup = countryList(countriesArray); 
    refs.countryList.insertAdjacentHTML("beforeend", markup);
-}
+};
 })
-  .catch(() => {
-    Notify.failure("Oops, there is no country with that name"); 
-  });
+.catch(() => {
+  Notify.failure("Oops, there is no country with that name"); 
+  
+}); 
+
 }
+
+
 
    function countryCard (countriesArray) {
     return countriesArray

@@ -3,17 +3,16 @@ const queryParams = '?fields=name,capital,population,flags,languages';
 
 export function fetchCountries(name) {
   if (name.trim() === "") {
-    console.log(name);
-    return;
+      return;
   }
-  console.log(`${url}${name}${queryParams}`);
+  // console.log(`${url}${name}${queryParams}`);
   return fetch(`${url}${name}${queryParams}`)
-   .then(response => {
-         if (!response.ok) {
-        throw new Error(response.status);
-         } 
-     return countriesArray = response.json();
-   })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  })
      }
 
-// export function {fetchCountries};
+// export function fetchCountries
