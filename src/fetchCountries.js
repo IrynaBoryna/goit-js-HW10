@@ -12,7 +12,7 @@ export function fetchCountries(name) {
          if (!response.ok) {
         throw new Error(response.status);
          } 
-     return promiseArray = response.json();
+     return countriesArray = response.json();
    })
      }
 
