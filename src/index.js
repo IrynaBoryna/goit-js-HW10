@@ -3,7 +3,7 @@ import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {fetchCountries} from './fetchCountries';
 
-const DEBOUNCE_DELAY = 1300;
+const DEBOUNCE_DELAY = 300;
 
 let inputSearch = "";
 let countriesArray = [];
@@ -15,8 +15,8 @@ const refs = {
   countryList: document.querySelector(".country-list"),
 }
 
-
 refs.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
+
 
 function onSearch (e) {
  e.preventDefault();
