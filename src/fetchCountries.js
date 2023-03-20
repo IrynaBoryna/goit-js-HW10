@@ -6,7 +6,7 @@ function fetchCountries(name) {
     console.log(name);
     return;
   }
-  // console.log(`${url}${name}${queryParams}`);
+  console.log(`${url}${name}${queryParams}`);
   return fetch(`${url}${name}${queryParams}`)
    .then(response => {
          if (!response.ok) {

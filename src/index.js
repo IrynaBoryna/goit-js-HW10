@@ -26,11 +26,13 @@ clearForm();
 
  API.fetchCountries(inputSearch)
  .then(countriesArray => {
+  console.log(countriesArray);
     if(countriesArray.length > 10) {
     Notify.info("Too many matches found. Please enter a more specific name.");
 
   } 
   else   if (countriesArray.length === 1) {
+    console.log(countriesArray);
    const markupCard = countryCard(countriesArray); 
     refs.countryInfoCard.insertAdjacentHTML("beforeend", markupCard);  
  } 
@@ -78,7 +80,7 @@ clearForm();
       if(inputSearch === "") {
         refs.countryList.innerHTML = "";
         refs.countryInfoCard.innerHTML= "";
-        return;
+        return
        }
       };  
 
